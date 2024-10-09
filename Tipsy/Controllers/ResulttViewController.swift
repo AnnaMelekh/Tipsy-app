@@ -9,28 +9,24 @@
 import UIKit
 
 class ResulttViewController: UIViewController {
-
-    @IBOutlet weak var totalLabel: UILabel!
     
+    var sum: Float = 0
+    var numberOfPeople: Float = 0
+    var tip: Float = 0
+    
+    @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        totalLabel.text = String(sum)
+        settingLabel.text = "Split between \(Int(numberOfPeople)) people \n with \(Int(tip))% tip"
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBAction func recalculateButton(_ sender: Any) {
+    @IBAction func recalculateButton(_ sender: UIButton) {
+        self.dismiss(animated: true)
     }
 }
+
